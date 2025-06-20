@@ -5,11 +5,11 @@
   "license": "MIT",
   "require": {
     "php": "^8.2",
-    "davycraft648/pminputapi": "1.0.0",
-    "davycraft648/pmserver-ui": "1.0.1"
+    "davycraft648/pminputapi": "^1.0",
+    "davycraft648/pmserver-ui": "^1.0"
   },
   "require-dev": {
-    "pocketmine/pocketmine-mp": "^5.0.0"
+    "pocketmine/pocketmine-mp": "^5.22"
   },
   "autoload": {
     "classmap": ["src"]
