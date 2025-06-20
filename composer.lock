@@ -1,0 +1,108 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5f9bb7e879cb0818613dba58eb4816b6",
+    "packages": [
+        {
+            "name": "davycraft648/pminputapi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DavyCraft648/PMInputAPI.git",
+                "reference": "6232c872e299dc60055463598ef175057e053b8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DavyCraft648/PMInputAPI/zipball/6232c872e299dc60055463598ef175057e053b8e",
+                "reference": "6232c872e299dc60055463598ef175057e053b8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "pocketmine/pocketmine-mp": "^5.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "virion": {
+                    "spec": "3.1",
+                    "namespace-root": "DavyCraft648\\PMInputAPI"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "PocketMine-MP virion designed to detect player input and various input modes",
+            "support": {
+                "source": "https://github.com/DavyCraft648/PMInputAPI/tree/1.0.0",
+                "issues": "https://github.com/DavyCraft648/PMInputAPI/issues"
+            },
+            "time": "2025-06-20T03:34:45+00:00"
+        },
+        {
+            "name": "davycraft648/pmserver-ui",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DavyCraft648/PMServerUI.git",
+                "reference": "c3da5bf08e5bf89bc694375c5e66185292df97c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DavyCraft648/PMServerUI/zipball/c3da5bf08e5bf89bc694375c5e66185292df97c0",
+                "reference": "c3da5bf08e5bf89bc694375c5e66185292df97c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "pocketmine/pocketmine-mp": "^5.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "virion": {
+                    "spec": "3.1",
+                    "namespace-root": "DavyCraft648\\PMServerUI"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Integrate UI features available in the Script API to PocketMine-MP",
+            "support": {
+                "source": "https://github.com/DavyCraft648/PMServerUI/tree/1.0.1",
+                "issues": "https://github.com/DavyCraft648/PMServerUI/issues"
+            },
+            "time": "2025-06-08T04:53:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "davycraft648/pminputapi": 20,
+        "davycraft648/pmserver-ui": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

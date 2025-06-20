@@ -4,15 +4,21 @@
   "type": "project",
   "license": "MIT",
   "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
-    "davycraft648/pminputapi": "^1.0",
-    "davycraft648/pmserver-ui": "^1.0"
-  },
-  "require-dev": {
-    "pocketmine/pocketmine-mp": "^5.22"
+    "davycraft648/pminputapi": "dev-master",
+    "davycraft648/pmserver-ui": "dev-master"
   },
   "autoload": {
     "classmap": ["src"]
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/DavyCraft648/PMInputAPI.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/DavyCraft648/PMServerUI.git"
+    }
+  ]
 }
