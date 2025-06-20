@@ -5,4 +5,9 @@ branches:
 projects:
   InputPermission:
     path: ""
+    libs:
+      - src: DavyCraft648/PMInputAPI/PMInputAPI
+        version: ^1.0.1
+      - src: DavyCraft648/PMServerUI/PMServerUI
+        version: ^1.0.2
 ...
