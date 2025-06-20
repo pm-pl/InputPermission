@@ -3,8 +3,9 @@
   "description": "PocketMine-MP plugin, set whether or not a player's input can affect their character",
   "type": "project",
   "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
-    "php": "^8.2",
     "davycraft648/pminputapi": "^1.0",
     "davycraft648/pmserver-ui": "^1.0"
   },
