@@ -1,0 +1,45 @@
+name: InputPermission
+description: Sets whether or not a player's input can affect their character.
+main: DavyCraft648\InputPermission\InputPermission
+version: 1.0.0
+api: 5.22.0
+author: DavyCraft648
+permissions:
+  inputpermission.command:
+    default: op
+  inputpermission.command.query.self:
+    default: op
+  inputpermission.command.query.other:
+    default: op
+  inputpermission.command.set.self:
+    default: op
+  inputpermission.command.set.other:
+    default: op
+  inputpermission.command.admin:
+    default: op
+  inputpermission.permission.camera:
+    default: true
+  inputpermission.permission.dismount:
+    default: true
+  inputpermission.permission.jump:
+    default: true
+  inputpermission.permission.lateral_movement:
+    default: true
+  inputpermission.permission.mount:
+    default: true
+  inputpermission.permission.move_backward:
+    default: true
+  inputpermission.permission.move_forward:
+    default: true
+  inputpermission.permission.move_left:
+    default: true
+  inputpermission.permission.move_right:
+    default: true
+  inputpermission.permission.movement:
+    default: true
+  inputpermission.permission.sneak:
+    default: true
+commands:
+  inputpermission:
+    description: Specify the operation for the player's permission status
+    permission: inputpermission.command;inputpermission.command.query.self;inputpermission.command.query.other;inputpermission.command.set.self;inputpermission.command.set.other;inputpermission.command.admin
