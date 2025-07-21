@@ -156,21 +156,23 @@ class InputPermission extends PluginBase{
 	}
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
-		if(!$sender instanceof Player){
-			return true;
-		}
-
 		switch($args[0] ?? ""){
 			case "query":
 				if(count($args) < 3){
-					$this->showQueryForm($sender, $args[1] ?? null, $args[2] ?? null);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showQueryForm($sender, $args[1] ?? null, $args[2] ?? null);
+                        return true;
+                    }
+					return false;
 				}
 				$targetName = $args[1];
 				$target = $this->getServer()->getPlayerExact($targetName);
 				if($target === null){
-					$this->showQueryForm($sender);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showQueryForm($sender);
+                        return true;
+                    }
+                    return false;
 				}
 				if($target === $sender){
 					if(!$sender->hasPermission("inputpermission.command.query.self")){
@@ -185,15 +187,21 @@ class InputPermission extends PluginBase{
 				}
 				$permission = self::PERMISSION_CATEGORIES[$rawPerm = strtolower($args[2])] ?? null;
 				if($permission === null){
-					$this->showQueryForm($sender, $targetName);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showQueryForm($sender, $targetName);
+                        return true;
+                    }
+                    return false;
 				}
 				$state = $args[3] ?? null;
 				if($state !== null){
 					$state = strtolower($state);
 					if($state !== "disabled" && $state !== "enabled"){
-						$this->showQueryForm($sender, $targetName, $rawPerm);
-						return true;
+                        if($sender instanceof Player){
+                            $this->showQueryForm($sender, $targetName, $rawPerm);
+                            return true;
+                        }
+                        return false;
 					}
 					$session = PMInputAPI::getInputManager()->getPlayer($target);
 					$enabled = $session->inputPermissions->isPermissionCategoryEnabled($permission);
@@ -214,14 +222,20 @@ class InputPermission extends PluginBase{
 				break;
 			case "set":
 				if(count($args) < 4){
-					$this->showSetForm($sender, $args[1] ?? null, $args[2] ?? null);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showSetForm($sender, $args[1] ?? null, $args[2] ?? null);
+                        return true;
+                    }
+                    return false;
 				}
 				$targetName = $args[1];
 				$target = $this->getServer()->getPlayerExact($targetName);
 				if($target === null){
-					$this->showSetForm($sender);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showSetForm($sender);
+                        return true;
+                    }
+                    return false;
 				}
 				if($target === $sender){
 					if(!$sender->hasPermission("inputpermission.command.set.self")){
@@ -236,13 +250,19 @@ class InputPermission extends PluginBase{
 				}
 				$permission = self::PERMISSION_CATEGORIES[$rawPerm = strtolower($args[2])] ?? null;
 				if($permission === null){
-					$this->showSetForm($sender, $targetName);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showSetForm($sender, $targetName);
+                        return true;
+                    }
+                    return false;
 				}
 				$state = strtolower($args[3]);
 				if($state !== "disabled" && $state !== "enabled"){
-					$this->showSetForm($sender, $targetName, $rawPerm);
-					return true;
+                    if($sender instanceof Player){
+                        $this->showSetForm($sender, $targetName, $rawPerm);
+                        return true;
+                    }
+                    return false;
 				}
 
 				$session = PMInputAPI::getInputManager()->getPlayer($target);
@@ -251,6 +271,9 @@ class InputPermission extends PluginBase{
 				$sender->sendMessage(new Translatable("commands.inputpermission.set.outputoneplayer", [$permission->name, $state, $targetName]));
 				break;
 			default:
+                if(!$sender instanceof Player){
+                    return false;
+                }
 				$this->showInputPermissionForm($sender);
 		}
 		return true;
